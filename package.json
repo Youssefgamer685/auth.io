@@ -1,0 +1,28 @@
+{
+  "name": "react-authenticator",
+  "version": "1.0.0",
+  "description": "This Package Is Build To Implement Auth In Different Ways In You React App",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "build:cjs": "tsc",
+    "build:esm": "tsc --outDir ./esm --module es6",
+    "build": "npm run build:esm && npm run build:cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Youssefgamer685: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@github.com/Youssefgamer685/react-authenticator.git"
+  },
+  "keywords": ["react", "auth"],
+  "author": "Youssefgamer685 <ya107231@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Youssefgamer685/react-authenticator/issues"
+  },
+  "homepage": "https://github.com/Youssefgamer685/react-authenticator#readme",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  },
+  "files": ["./esm/**/*", "./cjs/**/*", "./types/**/*"]
+}
