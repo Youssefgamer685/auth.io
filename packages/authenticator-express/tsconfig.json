@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2020",
     "module": "commonjs",
     "declaration": true,
     "outDir": "./cjs",
     "moduleResolution": "nodenext",
     "strict": true,
     "skipLibCheck": true,
-    "declarationDir": "./types"
+    "declarationDir": "./types",
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]
