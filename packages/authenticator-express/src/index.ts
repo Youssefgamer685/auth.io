@@ -1,5 +1,4 @@
-export { default, type AuthRouter, type AuthenticatorOptions } from "./core";
-export * as Methods from "./methods";
+export { default, type AuthRouter, type AuthenticatorOptions } from "./lib";
 
 export type {
   CredentialsMethodConfig,

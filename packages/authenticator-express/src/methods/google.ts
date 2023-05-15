@@ -11,6 +11,7 @@ const google = (options: GoogleMethodConfig): OAuthMethod => {
   return {
     id: options.id ?? "google",
     type: "oauth",
+    OAuthVersion: "2.0"
     authorization: {
       uri: "https://accounts.google.com/o/oauth2/v2/auth",
       params: (redirectURI) => ({

@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import jwt, { type JwtPayload } from "jsonwebtoken";
 import querystring from "node:querystring";
-import axios from "axios";
+import { OAuth, OAuth2 } from "oauth";
 import cors from "cors";
 import * as controllers from "../controllers";
 import { verifyOptions, getMethod } from "../utils";
@@ -47,19 +47,10 @@ const Authenticator = (options: AuthenticatorOptions): AuthRouter => {
       const method = getMethod(methodId, _options);
 
       try {
-        const { data: accessToken } = await axios.post<{
-          access_token: string;
-        }>(
-          `${(method as OAuthMethod).token.uri}?${querystring.stringify(
-            (method as OAuthMethod).token.params?.(code as string)
-          )}`
-        );
-        const { data: userInfo } = await axios.get<JwtPayload>(
-          `${(method as OAuthMethod).userinfo.uri}?${querystring.stringify(
-            (method as OAuthMethod).userinfo.params?.(accessToken.access_token)
-          )}`
-        );
-
+        const OAuthClient = (method as OAuthMethod).OAuthVersion === "2.0" ? OAuth2 : OAuth;
+       
+       
+        
         const token = jwt.sign(userInfo, _options.secret as string);
 
         res.cookie("token", token).redirect(_options.clientURI);

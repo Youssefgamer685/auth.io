@@ -41,6 +41,7 @@ export interface CredentialsMethod extends Required<CredentialsMethodConfig> {
 
 export interface OAuthMethod extends CommonMethodConfig {
   type: "oauth";
+  OAuthVersion: "2.0" | "1.0a";
   authorization: EndpointHandler;
   userinfo: EndpointHandler;
   token: EndpointHandler;

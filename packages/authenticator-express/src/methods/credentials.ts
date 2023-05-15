@@ -4,7 +4,7 @@ const credentials = <
   P extends Record<string, unknown> = Record<string, unknown>
 >(
   options: CredentialsMethodConfig<P>
-): CredentialsMethod => {
+): CredentialsMethod<P> => {
   return {
     id: "credentials",
     type: "credentials",

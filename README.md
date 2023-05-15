@@ -1,1 +1,1 @@
-# React Authenticator
+# Auth.IO
